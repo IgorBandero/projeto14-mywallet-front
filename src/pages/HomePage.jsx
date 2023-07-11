@@ -8,8 +8,8 @@ export default function HomePage() {
   return (
     <HomeContainer>
       <Header>
-        <h1>Olá, Fulano</h1>
-        <BiExit />
+        <h1 >Olá, <span data-test="user-name">Fulano</span></h1>
+        <BiExit data-test="logout"/>
       </Header>
 
       <TransactionsContainer>
@@ -17,33 +17,33 @@ export default function HomePage() {
           <ListItemContainer>
             <div>
               <span>30/11</span>
-              <strong>Almoço mãe</strong>
+              <strong data-test="registry-name">Almoço mãe</strong>
             </div>
-            <Value color={"negativo"}>120,00</Value>
+            <Value data-test="registry-amount" color={"negativo"}>120,00</Value>
           </ListItemContainer>
 
           <ListItemContainer>
             <div>
               <span>15/11</span>
-              <strong>Salário</strong>
+              <strong data-test="registry-name">Salário</strong>
             </div>
-            <Value color={"positivo"}>3000,00</Value>
+            <Value data-test="registry-amount" color={"positivo"}>3000,00</Value>
           </ListItemContainer>
         </ul>
 
         <article>
           <strong>Saldo</strong>
-          <Value color={"positivo"}>2880,00</Value>
+          <Value data-test="total-amount" color={"positivo"}>2880,00</Value>
         </article>
       </TransactionsContainer>
 
 
       <ButtonsContainer>
-        <button>
+        <button data-test="new-income">
           <AiOutlinePlusCircle />
           <p>Nova <br /> entrada</p>
         </button>
-        <button>
+        <button data-test="new-expense">
           <AiOutlineMinusCircle />
           <p>Nova <br />saída</p>
         </button>

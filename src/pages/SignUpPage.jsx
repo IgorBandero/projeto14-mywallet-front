@@ -37,11 +37,11 @@ export default function SignUpPage() {
     <SingUpContainer>
       <form onSubmit={handleSignUp}> 
         <MyWalletLogo />
-        <input value={formData.name} placeholder="Nome" type="text" name="name" required onChange={handleChangeForm}/>
-        <input value={formData.email} placeholder="E-mail" type="email" autoComplete="new-password" name="email" required onChange={handleChangeForm}/>
-        <input value={formData.password}  placeholder="Senha" type="password" autoComplete="new-password" name="password" required minLength={3} onChange={handleChangeForm}/>
-        <input value={formData.passConfirm}  placeholder="Confirme a senha" type="password" autoComplete="new-password" name="passConfirm" required minLength={3} onChange={handleChangeForm}/>
-        <button type="submit"> Cadastrar</button>
+        <input data-test="name" value={formData.name} placeholder="Nome" type="text" name="name" required onChange={handleChangeForm}/>
+        <input data-test="email"  value={formData.email} placeholder="E-mail" type="email" autoComplete="new-password" name="email" required onChange={handleChangeForm}/>
+        <input data-test="password" value={formData.password}  placeholder="Senha" type="password" autoComplete="new-password" name="password" required minLength={3} onChange={handleChangeForm}/>
+        <input data-test="conf-password" value={formData.passConfirm}  placeholder="Confirme a senha" type="password" autoComplete="new-password" name="passConfirm" required minLength={3} onChange={handleChangeForm}/>
+        <button data-test="sign-up-submit" type="submit"> Cadastrar</button>
       </form>
 
       <Link to="/">

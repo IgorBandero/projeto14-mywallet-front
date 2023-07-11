@@ -17,17 +17,12 @@ export default function SignInPage() {
 
   const login = async (event) => {
     event.preventDefault();
-/*
-    if (formData.password !== formData.passConfirm) {
-      return alert("As senhas são diferentes!");
-    }
-    const {passConfirm, ...data} = formData;
-*/
+
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/login`, data);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/login`, formData);
       navigate("/home");
     } catch (error) {
-      alert(error.response.data);
+      // alert(error.response.data);
     }
 
   };
@@ -37,7 +32,7 @@ export default function SignInPage() {
     <SingInContainer>
       <form onSubmit={login}>
         <MyWalletLogo />
-        <input data-test="email" placeholder="E-mail" type="email" required name="email" value={formData.email} onChange={handleChangeForm}/>
+        <input data-test="email" placeholder="E-mail" type="email" autoComplete="new-password" required name="email" value={formData.email} onChange={handleChangeForm}/>
         <input data-test="password" placeholder="Senha" type="password" autoComplete="new-password" required minLength={3} name="password" value={formData.password}  onChange={handleChangeForm}/>
         <button data-test="sign-in-submit" type="submit" >Entrar</button>
       </form>

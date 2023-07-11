@@ -7,7 +7,6 @@ import React, {useState} from 'react';
 
 export default function SignUpPage() {
 
-
   const [formData, setFormData] = useState({name: "", email: "", password: "", passConfirm: ""});
   
   function handleChangeForm(event) {
@@ -19,7 +18,6 @@ export default function SignUpPage() {
 
   const handleSignUp = async (event) => {
     event.preventDefault();
-    console.log(formData);
     if (formData.password !== formData.passConfirm) {
       return alert("As senhas são diferentes!");
     }
